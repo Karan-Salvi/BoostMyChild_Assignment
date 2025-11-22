@@ -4,6 +4,7 @@ const DB_connect = require("./database/DB_connect.js");
 const cookieParser = require("cookie-parser");
 const cors = require("cors");
 const UserRoute = require("./routes/user.route.js");
+const AttendanceRoute = require("./routes/attendance.route.js");
 require("dotenv").config();
 
 const app = express();
@@ -27,6 +28,7 @@ app.use(express.static("public"));
 app.use(cookieParser());
 
 app.use("/api/users", UserRoute);
+app.use("/api/attendance", AttendanceRoute);
 
 app.get("/", (req, res) => {
   res.send("Server is Running on Port: " + PORT);
