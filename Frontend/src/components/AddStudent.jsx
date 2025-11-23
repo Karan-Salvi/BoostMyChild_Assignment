@@ -1,6 +1,32 @@
-import React from "react";
+import React, { useState } from "react";
+import { useCreateUserMutation } from "../store/api/userApi";
+import Loader from "./Loader";
 
 const AddStudent = () => {
+  const [createUser, { isLoading }] = useCreateUserMutation();
+  const [studentAdded, setStudentAdded] = useState(false);
+
+  const [form, setForm] = useState({
+    name: "",
+    role_no: "",
+  });
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+
+    try {
+      const res = await createUser(form).unwrap();
+      if (res) {
+        setStudentAdded(true);
+        setForm({
+          name: "",
+          role_no: "",
+        });
+      }
+    } catch (err) {
+      console.error("Error:", err);
+    }
+  };
   return (
     <div>
       <div
@@ -39,7 +65,7 @@ const AddStudent = () => {
               </button>
             </div>
             {/* <!-- Modal body --> */}
-            <form action="#" class="pt-4 md:pt-6">
+            <form action="#" class="pt-4 md:pt-6" onSubmit={handleSubmit}>
               <div class="mb-4">
                 <label
                   for="name"
@@ -53,6 +79,7 @@ const AddStudent = () => {
                   class="bg-neutral-secondary-medium border border-default-medium text-heading text-sm rounded-base focus:ring-brand focus:border-brand block w-full px-3 py-2.5 shadow-xs placeholder:text-body"
                   placeholder="Karan Salvi"
                   required
+                  onChange={(e) => setForm({ ...form, name: e.target.value })}
                 />
               </div>
               <div class="mb-4">
@@ -68,15 +95,33 @@ const AddStudent = () => {
                   class="bg-neutral-secondary-medium border border-default-medium text-heading text-sm rounded-base focus:ring-brand focus:border-brand block w-full px-3 py-2.5 shadow-xs placeholder:text-body"
                   placeholder="20"
                   required
+                  onChange={(e) =>
+                    setForm({ ...form, role_no: e.target.value })
+                  }
                 />
               </div>
 
               <button
                 type="submit"
+                disabled={isLoading}
                 class="text-white bg-brand box-border border border-transparent hover:bg-brand-strong focus:ring-4 focus:ring-brand-medium shadow-xs font-medium leading-5 rounded-base text-sm px-4 py-2.5 focus:outline-none w-full mb-3 cursor-pointer"
               >
-                Add Student
+                {isLoading ? (
+                  <div className="flex justify-center items-center gap-2">
+                    <Loader className={"w-5 h-5"} message={"saving"} />
+                    <span className="text-white font-semibold">
+                      Saving Student
+                    </span>
+                  </div>
+                ) : (
+                  <span className="text-white font-semibold">Save Student</span>
+                )}
               </button>
+              {studentAdded && (
+                <p className="w-full text-center text-green-700 text-sm">
+                  Student Added to the class..
+                </p>
+              )}
             </form>
           </div>
         </div>

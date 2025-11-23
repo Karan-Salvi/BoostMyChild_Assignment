@@ -198,7 +198,7 @@ const Attendance = ({
                       </tr>
                     </thead>
 
-                    <tbody>
+                    <tbody >
                       {fetchAttendance
                         ? attendanceData?.records?.map((record) => (
                             <tr
