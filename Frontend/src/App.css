@@ -1,0 +1,221 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&family=Science+Gothic:wght@100..900&display=swap");
+
+.science-gothic {
+  font-family: "Science Gothic", sans-serif;
+  font-optical-sizing: auto;
+  font-variation-settings: "slnt" 0, "wdth" 100, "CTRS" 0;
+}
+
+.fc-button {
+  border: none !important;
+  background: #1e3a8a !important;
+  color: white !important;
+  border-radius: 10px !important;
+  padding: 7px 16px !important;
+  font-size: 14px !important;
+  font-weight: 500 !important;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
+  transition: 0.2s ease;
+  cursor: pointer;
+}
+
+.fc-button:hover {
+  background: #3b82f6 !important;
+}
+
+.fc-button:disabled {
+  opacity: 0.6 !important;
+}
+
+.fc-dayGridMonth-button,
+.fc-timeGridWeek-button,
+.fc-timeGridDay-button {
+  background: #3b82f6 !important;
+  color: white !important;
+  border-radius: 20px !important;
+  padding: 6px 18px !important;
+  margin-right: 6px !important;
+  cursor: pointer;
+}
+
+.fc-button-active {
+  background: #1e3a8a !important;
+  color: white !important;
+  cursor: pointer;
+}
+
+.fc-toolbar-title {
+  font-family: "Roboto Condensed", sans-serif;
+  font-optical-sizing: auto;
+  font-size: 22px !important;
+  font-weight: 700 !important;
+  color: #374151 !important;
+  text-align: center !important;
+}
+
+.fc-scrollgrid,
+td,
+th {
+  border: none !important;
+}
+
+.fc-daygrid-day-frame {
+  background: #f1f5f9;
+  border-radius: 10px;
+  padding: 6px;
+  margin: 4px;
+  display: flex !important;
+  justify-content: left !important;
+  align-items: top !important;
+  min-height: 6rem !important;
+  border-radius: 0.35rem !important;
+  margin: 2px !important;
+  cursor: pointer;
+}
+
+.fc-daygrid-day-frame:hover {
+  background: #e0e7ff !important;
+}
+
+.fc-daygrid-day-number {
+  color: #1e293b !important;
+  font-weight: 600 !important;
+  font-size: 14px !important;
+}
+
+.fc-day-today .fc-daygrid-day-frame {
+  background: #dbeafe !important;
+  border-radius: 10px;
+}
+
+.fc-col-header-cell {
+  color: #1e293b !important;
+  font-size: 15px !important;
+  font-weight: 700 !important;
+  padding-bottom: 10px !important;
+}
+
+.fc .fc-scrollgrid,
+.fc .fc-scrollgrid table,
+.fc .fc-scrollgrid td,
+.fc .fc-scrollgrid th,
+.fc .fc-daygrid-day,
+.fc .fc-col-header-cell {
+  border: none !important;
+}
+
+.fc-day-today {
+  background: transparent !important;
+}
+
+.fc-daygrid-day-number {
+  font-size: 1rem !important;
+  font-weight: 700 !important;
+  padding: 6px;
+}
+
+.fc-toolbar-title {
+  font-size: 22px !important;
+  font-weight: 800 !important;
+  color: #111827 !important;
+}
+
+.fc-prev-button,
+.fc-next-button {
+  background: #ffffff !important;
+  border: 1px solid #d1d5db !important;
+  color: #6b7280 !important;
+  width: 54px !important;
+  height: 42px !important;
+  border-radius: 6px !important;
+  font-size: 16px !important;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.07);
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  padding: 0 !important;
+  cursor: pointer;
+}
+
+.fc-prev-button:hover,
+.fc-next-button:hover {
+  background: #f5f5f5 !important;
+  border-color: #cbd5e1 !important;
+}
+
+.fc-toolbar-chunk {
+  display: flex !important;
+  align-items: center !important;
+  gap: 4px !important;
+}
+
+.fc-toolbar.fc-header-toolbar {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+}
+
+.fc-button {
+  background: #ffffff !important;
+  border: 1px solid #d1d5db !important;
+  color: #374151 !important;
+  border-radius: 8px !important;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.08) !important;
+  height: 42px !important;
+  padding: 0 26px !important;
+  font-size: 14px !important;
+  font-weight: 500 !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 4px !important;
+  cursor: pointer;
+}
+
+.fc-button:hover {
+  background: #f3f4f6 !important;
+  border-color: #cbd5e1 !important;
+}
+
+.gradient {
+  background: #fafafa;
+  background: linear-gradient(
+    90deg,
+    rgba(250, 250, 250, 1) 0%,
+    rgba(216, 216, 232, 1) 52%,
+    rgba(16, 149, 232, 1) 100%
+  );
+}
+
+@media (max-width: 768px) {
+  .fc-toolbar-chunk {
+    width: 100%;
+    display: flex !important;
+    align-items: center !important;
+  }
+
+  .fc-toolbar-title {
+    font-size: 20px !important;
+    font-weight: 700 !important;
+    width: 100%;
+    text-align: center !important;
+  }
+
+  .fc-button {
+    padding: 0 12px !important;
+    font-size: 12px !important;
+    height: 36px !important;
+    gap: 0px !important;
+  }
+
+  .fc-prev-button,
+  .fc-next-button {
+    width: 40px !important;
+    height: 36px !important;
+    font-size: 14px !important;
+  }
+
+  .fc-toolbar-chunk {
+    gap: 0px !important;
+  }
+}
