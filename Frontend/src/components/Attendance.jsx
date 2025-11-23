@@ -183,9 +183,9 @@ const Attendance = ({
               </div>
 
               <div className="space-y-4 md:space-y-6 py-4 md:py-6">
-                <div className="relative overflow-x-auto bg-neutral-primary shadow-xs rounded-base border border-default">
-                  <table className="w-full text-sm text-left rtl:text-right text-body">
-                    <thead className="text-sm text-body border-b border-default">
+                <div className="max-h-80 overflow-y-auto relative overflow-x-auto bg-neutral-primary shadow-xs rounded-base border border-default">
+                  <table className="w-full  border-collapse text-sm text-left rtl:text-right text-body">
+                    <thead className="sticky top-0 bg-neutral-secondary-soft z-10 text-sm text-body border-b border-default">
                       <tr>
                         <th className="px-6 py-3 bg-neutral-secondary-soft font-medium">
                           Student name
@@ -198,7 +198,7 @@ const Attendance = ({
                       </tr>
                     </thead>
 
-                    <tbody >
+                    <tbody>
                       {fetchAttendance
                         ? attendanceData?.records?.map((record) => (
                             <tr
