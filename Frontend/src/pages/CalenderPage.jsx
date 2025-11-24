@@ -1,13 +1,15 @@
+import { useState } from "react";
 import AddStudent from "../components/AddStudent";
 import Calender from "../components/Calender";
 import Header from "../components/Header";
 
 function CalenderPage() {
+  const [studentAdd, setStudentAdd] = useState(false);
   return (
     <div className=" flex flex-col justify-between items-center h-screen bg-white ">
-      <Header />
+      <Header setStudentAdd={setStudentAdd} />
       <Calender />
-      <AddStudent />
+      <AddStudent studentAdd={studentAdd} setStudentAdd={setStudentAdd} />
     </div>
   );
 }

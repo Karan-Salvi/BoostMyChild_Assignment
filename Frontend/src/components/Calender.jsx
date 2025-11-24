@@ -4,6 +4,7 @@ import dayGridPlugin from "@fullcalendar/daygrid";
 import interactionPlugin from "@fullcalendar/interaction";
 import Attendance from "./Attendance";
 import { useGetAttendanceByDateQuery } from "../store/api/attendanceApi";
+import AddStudent from "./AddStudent";
 
 const Calender = () => {
   const [openModal, setOpenModal] = useState(false);
@@ -71,7 +72,7 @@ const Calender = () => {
         flex-direction: column;
         gap: 4px;
       ">
-        <div style="
+      <div style="display: flex; align-items: center; gap: 4px;"> <div style="
           width: 10px;
           height: 10px;
           border-radius: 6px;
@@ -87,9 +88,14 @@ const Calender = () => {
           color: #1e293b;
           font-weight: 600;
           font-size: 14px;
-        ">${info.dayNumberText}</div>
+        ">${info.dayNumberText}</div></div>
+       
         <div style="
-          font-size: 13px;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: center;
+          font-size: 10px;
           color: ${
             bgColor === "#d1fae5"
               ? "#065f46"
@@ -99,7 +105,13 @@ const Calender = () => {
           };
           line-height: 1.3;
           white-space: pre-line;
-        ">P: ${record.present} / A: ${record.absent} / L: ${record.leave}</div>
+        ">
+        
+        
+        <p>P:${record.present}</p> 
+        <p>A:${record.absent}</p> 
+        <p>L:${record.leave} </p>
+            </div>
       </div>
     `,
           };
