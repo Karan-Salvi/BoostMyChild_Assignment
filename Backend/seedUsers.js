@@ -1,5 +1,6 @@
 const mongoose = require("mongoose");
 const dotenv = require("dotenv");
+const User = require("./models/user.model");
 
 dotenv.config();
 
@@ -15,6 +16,7 @@ const seedUsers = async () => {
     await mongoose.connect(
       `${process.env.MONGODB_URI}/${process.env.DATABASE_NAME}`
     );
+
     console.log("MongoDB connected...");
 
     await User.insertMany(users);
